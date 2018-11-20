@@ -1,27 +1,0 @@
-spring:
-  datasource:    url: ${JDBC_DATABASE_URL}
-    username: ${JDBC_DATABASE_USERNAME}
-    password: ${JDBC_DATABASE_PASSWORD}
-    type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    open-in-view: false
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    properties:      hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
-    hibernate:
-      ddl-auto: update
-      naming:        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy  profiles:    active: ${spring.profiles.active}
-  liquibase: 
-    url: ${spring.datasource.url}
-    user: ${spring.datasource.username}
-    password: ${spring.datasource.password}
-    change-log: classpath:/liquibase/master.xml
-    enabled: true
-    drop-first: false
-    contexts: ${spring.profiles.active}
-
-        
