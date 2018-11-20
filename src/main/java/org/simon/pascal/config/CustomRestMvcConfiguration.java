@@ -3,7 +3,6 @@
  */
 package org.simon.pascal.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -14,7 +13,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
  */
 @Configuration
 public class CustomRestMvcConfiguration {
-	@Bean
+	  //@Bean
 	  public RepositoryRestConfigurer repositoryRestConfigurer() { 
 
 	    return new RepositoryRestConfigurer() {
