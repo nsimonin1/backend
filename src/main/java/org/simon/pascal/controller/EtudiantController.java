@@ -48,14 +48,14 @@ public class EtudiantController {
 	}
 	
 	@PatchMapping("/maj/{matricule}")
-	public ResponseEntity<String> create(@PathVariable String matricule
+	public ResponseEntity<String> maj(@PathVariable String matricule
 			,@RequestBody EtudiantMaj etudiant) throws BusinessResourceException {
 		etudiantService.update(matricule, etudiant);
 		return ResponseEntity.ok("OK");
 	}
 	
 	@PostMapping("/del/{matricule}")
-	public ResponseEntity<String> create(@PathVariable String matricule) throws BusinessResourceException {
+	public ResponseEntity<String> supprimer(@PathVariable String matricule) throws BusinessResourceException {
 		etudiantService.delete(matricule);
 		return ResponseEntity.ok("OK");
 	}
